@@ -1,26 +1,185 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G8c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H8d-OW-JBN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--GoneSoFar-->
+        <scene sceneID="jkl-Lm-cFk">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GoneSoFar" id="tg8-jl-rTm" customClass="ViewController" customModule="Testing_GraphView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="9yV-JM-oCN"/>
+                        <viewControllerLayoutGuide type="bottom" id="w8T-jv-Zhf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="w30-fK-Aaq">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puo-jq-7xa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54y-N7-pMZ" customClass="UIGraphView" customModule="Testing_GraphView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="256.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientTop">
+                                                <color key="value" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientBottom">
+                                                <color key="value" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="barGraph" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRounding" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="graphDataColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-Fr-Mk9">
+                                        <rect key="frame" x="19.5" y="253.5" width="335.5" height="29"/>
+                                        <segments>
+                                            <segment title="Day"/>
+                                            <segment title="Week"/>
+                                            <segment title="Month"/>
+                                            <segment title="Year"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="setGraphTimeFrame:" destination="tg8-jl-rTm" eventType="valueChanged" id="L6v-PX-iAx"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="height" secondItem="Puo-jq-7xa" secondAttribute="height" multiplier="0.85" id="4O6-dF-kBI"/>
+                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="top" secondItem="Puo-jq-7xa" secondAttribute="top" id="56t-Ec-yLP"/>
+                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="93j-YK-dBK"/>
+                                    <constraint firstAttribute="trailing" secondItem="tKp-Fr-Mk9" secondAttribute="trailing" constant="20" id="Stz-58-3U5"/>
+                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="width" secondItem="Puo-jq-7xa" secondAttribute="width" id="VAu-nS-tS0"/>
+                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="Zf7-Er-GLM"/>
+                                    <constraint firstAttribute="bottom" secondItem="tKp-Fr-Mk9" secondAttribute="bottom" constant="20" id="cn9-sU-U9t"/>
+                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="leading" secondItem="Puo-jq-7xa" secondAttribute="leading" constant="20" id="jVS-d8-AA7"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wpx-Z2-OVk">
+                                <rect key="frame" x="0.0" y="301.5" width="375" height="252.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WaterIntake" textLabel="97x-Jr-6Rq" detailTextLabel="ocO-b2-XKi" style="IBUITableViewCellStyleSubtitle" id="Ae1-fd-kR5">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ae1-fd-kR5" id="aVF-C1-PpB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="97x-Jr-6Rq">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ocO-b2-XKi">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w8T-jv-Zhf" firstAttribute="top" secondItem="Wpx-Z2-OVk" secondAttribute="bottom" id="W2z-hA-wHQ"/>
+                            <constraint firstItem="Puo-jq-7xa" firstAttribute="width" secondItem="w30-fK-Aaq" secondAttribute="width" id="XgG-zv-Fig"/>
+                            <constraint firstItem="Wpx-Z2-OVk" firstAttribute="width" secondItem="w30-fK-Aaq" secondAttribute="width" id="XzO-Oa-OHT"/>
+                            <constraint firstItem="Puo-jq-7xa" firstAttribute="height" secondItem="w30-fK-Aaq" secondAttribute="height" multiplier="0.5" id="a9C-zJ-8jN"/>
+                            <constraint firstItem="Wpx-Z2-OVk" firstAttribute="top" secondItem="Puo-jq-7xa" secondAttribute="bottom" id="eog-ir-y5J"/>
+                            <constraint firstItem="Wpx-Z2-OVk" firstAttribute="centerX" secondItem="w30-fK-Aaq" secondAttribute="centerX" id="gJP-Cw-reA"/>
+                            <constraint firstItem="Puo-jq-7xa" firstAttribute="top" secondItem="9yV-JM-oCN" secondAttribute="bottom" id="iVt-S1-cnf"/>
+                            <constraint firstItem="Puo-jq-7xa" firstAttribute="centerX" secondItem="w30-fK-Aaq" secondAttribute="centerX" id="prh-2c-Yfb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="History" id="JCw-bQ-Uwh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="KIy-yX-phb">
+                            <connections>
+                                <action selector="refreshGraph:" destination="tg8-jl-rTm" id="eP7-Uy-Mo4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="graphTimeFrameSegmentedControl" destination="tKp-Fr-Mk9" id="14N-NK-c6a"/>
+                        <outlet property="graphView" destination="54y-N7-pMZ" id="2wo-Sp-osy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALU-MQ-bPn" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1993" y="714"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="MqW-56-LFu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gfZ-Vc-7ca" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="tabHistory" id="9QL-eo-VUR"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="7sX-6O-pOz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.36078431370000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tg8-jl-rTm" kind="relationship" relationship="rootViewController" id="K17-qp-560"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SnY-Jg-hYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="-15"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6a8-TO-IhS">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="H8d-OW-JBN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="QT0-r4-H4z">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gfZ-Vc-7ca" kind="relationship" relationship="viewControllers" id="pw6-Xz-7MG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eu-eH-dUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="-14"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabHistory" width="16" height="16"/>
+    </resources>
 </document>

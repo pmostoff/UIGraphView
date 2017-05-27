@@ -17,6 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Set 'defaults' to equal the UserDefaults
+        let defaults = UserDefaults.standard
+        //Set the initial values for UserDefaults
+        defaults.register(defaults: [
+            // Set which type of unit to display in
+            "lengthUnit" : "miles",
+            // Daily Goal
+            "dailyGoalMiles" : 5,
+            "dailyGoalKilometers" : 8.0467,
+            // GoalsTable
+            "timeFrame" : "Week",
+            "sortDescriptorKey" : "lengthInMiles",
+            "sortDescriptorAscending" : true,
+            // Notification related preferences
+            "dailyGoalCompletionNotifications" : false,
+            "weeklySummaryNotifications" : false,
+            "progressNotificationsInterval" : 0
+            ])
+        
+        
+        // Sets background to a blank/empty image
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        // Sets the color of highlighted tab icon
+        UITabBar.appearance().tintColor = UIColor(red:0.00, green:0.36, blue:0.74, alpha:1.00)
+        // This makes sure that modal views like the 'Print' share sheet don't have a transparent navBar
+        UINavigationBar.appearance().isTranslucent = false
+        // Removes the 1px high shadowImage from UINavigationBars
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        
         return true
     }
 
