@@ -12,12 +12,10 @@ class ViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
-    let healthKitManager = HealthKitManager.sharedInstance
-    
-    var dayData:[Double] = []
-    var weekData:[Double] = []
-    var monthData:[Double] = []
-    var yearData:[Double] = []
+    var dayData:[Double] = [1, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5, 4, 3, 0, 2, 3]
+    var weekData:[Double] = [1, 2, 3, 4, 5, 4, 3]
+    var monthData:[Double] = [1, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5, 4, 3, 0, 2, 3]
+    var yearData:[Double] = [1, 2, 3, 4, 5, 4, 3, 0, 2, 3, 4, 5]
     
     var latestEntry: String = ""
     var latestEntryTime: String = ""
@@ -26,6 +24,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var graphView: UIGraphView!
     @IBOutlet var graphTimeFrameSegmentedControl: UISegmentedControl!
+    @IBOutlet var graphStyleSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,61 +46,17 @@ class ViewController: UIViewController {
             break
         }
         
-        healthKitManager.requestAuthorization()
-        
-        let lengthUnit = self.defaults.string(forKey: "lengthUnit")!
-        switch lengthUnit {
-        case "miles":
-            self.currentDistanceUnit = "Mi"
-        case "kilometers":
-            self.currentDistanceUnit = "Km"
-        default:
-            break
+        switch defaults.bool(forKey: "barGraph") {
+        case true:
+            graphStyleSegmentedControl.selectedSegmentIndex = 0
+            graphView.barGraph = true
+        case false:
+            graphStyleSegmentedControl.selectedSegmentIndex = 1
+            graphView.barGraph = false
         }
         
-        healthKitManager.queryTodayDistanceSum {
-            self.latestEntry = "\(self.healthKitManager.todayDistance.cleanValue) \(self.currentDistanceUnit)"
-        }
+        setupGraphDisplay()
         
-        healthKitManager.queryLatestDistanceEntry {
-            if self.healthKitManager.latestDistanceEntryTimeLabel == "--:--" {
-                self.latestEntryTime = "Today"
-            } else {
-                self.latestEntryTime = "Today, \(self.healthKitManager.latestDistanceEntryTimeLabel)"
-            }
-        }
-        
-        healthKitManager.getDistanceHistory {
-            self.dayData = self.healthKitManager.distanceDayHistory
-            self.weekData = self.healthKitManager.distanceWeekHistory
-            self.monthData = self.healthKitManager.distanceMonthHistory
-            self.yearData = self.healthKitManager.distanceYearHistory
-            self.setupGraphDisplay()
-        }
-        
-        
-    }
-    
-    @IBAction func refreshGraph(_ sender: Any) {
-        healthKitManager.queryTodayDistanceSum {
-            self.latestEntry = "\(self.healthKitManager.todayDistance.cleanValue) \(self.currentDistanceUnit)"
-        }
-        
-        healthKitManager.queryLatestDistanceEntry {
-            if self.healthKitManager.latestDistanceEntryTimeLabel == "--:--" {
-                self.latestEntryTime = "Today"
-            } else {
-                self.latestEntryTime = "Today, \(self.healthKitManager.latestDistanceEntryTimeLabel)"
-            }
-        }
-        
-        healthKitManager.getDistanceHistory {
-            self.dayData = self.healthKitManager.distanceDayHistory
-            self.weekData = self.healthKitManager.distanceWeekHistory
-            self.monthData = self.healthKitManager.distanceMonthHistory
-            self.yearData = self.healthKitManager.distanceYearHistory
-            self.setupGraphDisplay()
-        }
     }
     
     @IBAction func setGraphTimeFrame(_ sender: Any) {
@@ -121,34 +76,45 @@ class ViewController: UIViewController {
         self.setupGraphDisplay()
     }
     
+    @IBAction func setGraphStyle(_ sender: Any) {
+        switch graphStyleSegmentedControl.selectedSegmentIndex {
+        case 0:
+            defaults.set(true, forKey: "barGraph")
+            graphView.barGraph = true
+        case 1:
+            defaults.set(false, forKey: "barGraph")
+            graphView.barGraph = false
+        default:
+            break
+        }
+        
+        self.setupGraphDisplay()
+    }
+    
     func setupGraphDisplay() {
         
-        // Indicate that the graph needs to be redrawn
-        graphView.setNeedsDisplay()
-        
-        let graphTimeFrame: String = self.defaults.string(forKey: "timeFrame")!
-        
-        let graphTitle: String = "Distance"
+        let graphTitle: String = "Data"
         var graphSubtitle: String = ""
-        let latestEntry = self.latestEntry
-        let latestEntryTime = self.latestEntryTime
+        let latestEntry = "3"
+        let latestEntryTime = "Today"
         
         // Calculate Daily Average from graphPoints Array
         var graphData: [Double] = []
+        let graphTimeFrame: String = self.defaults.string(forKey: "timeFrame")!
         switch graphTimeFrame {
         case "Day":
             graphSubtitle = ""
             graphData = self.dayData
         case "Week":
-            let dailyAverage = self.healthKitManager.distanceWeekAverage
+            let dailyAverage = Double(weekData.reduce(0, +)) / Double(weekData.count)
             graphSubtitle = "Daily Average: \(dailyAverage.cleanValue)"
             graphData = self.weekData
         case "Month":
-            let dailyAverage = self.healthKitManager.distanceMonthAverage
+            let dailyAverage = Double(monthData.reduce(0, +)) / Double(monthData.count)
             graphSubtitle = "Daily Average: \(dailyAverage.cleanValue)"
             graphData = self.monthData
         case "Year":
-            let dailyAverage = self.healthKitManager.distanceYearAverage
+            let dailyAverage = Double(yearData.reduce(0, +)) / Double(yearData.count)
             graphSubtitle = "Daily Average: \(dailyAverage.cleanValue)"
             graphData = self.yearData
         default:

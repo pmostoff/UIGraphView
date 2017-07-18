@@ -1,55 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G8c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H8d-OW-JBN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H8d-OW-JBN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--GoneSoFar-->
+        <!--History-->
         <scene sceneID="jkl-Lm-cFk">
             <objects>
-                <viewController title="GoneSoFar" id="tg8-jl-rTm" customClass="ViewController" customModule="Testing_GraphView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="History" id="tg8-jl-rTm" customClass="ViewController" customModule="UIGraphView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9yV-JM-oCN"/>
                         <viewControllerLayoutGuide type="bottom" id="w8T-jv-Zhf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w30-fK-Aaq">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puo-jq-7xa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54y-N7-pMZ" customClass="UIGraphView" customModule="Testing_GraphView" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="256.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54y-N7-pMZ" customClass="UIGraphView" customModule="UIGraphView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="271.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientTop">
-                                                <color key="value" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientBottom">
-                                                <color key="value" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="barGraph" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRounding" value="NO"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="graphDataColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-Fr-Mk9">
-                                        <rect key="frame" x="19.5" y="253.5" width="335.5" height="29"/>
+                                        <rect key="frame" x="18.5" y="266" width="337.5" height="29"/>
                                         <segments>
                                             <segment title="Day"/>
                                             <segment title="Week"/>
@@ -61,21 +49,34 @@
                                             <action selector="setGraphTimeFrame:" destination="tg8-jl-rTm" eventType="valueChanged" id="L6v-PX-iAx"/>
                                         </connections>
                                     </segmentedControl>
+                                    <segmentedControl opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ulo-Ro-AaO">
+                                        <rect key="frame" x="19" y="314" width="337.5" height="29"/>
+                                        <segments>
+                                            <segment title="Bar Graph"/>
+                                            <segment title="Line Graph"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="setGraphStyle:" destination="tg8-jl-rTm" eventType="valueChanged" id="9aX-gd-ODu"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="height" secondItem="Puo-jq-7xa" secondAttribute="height" multiplier="0.85" id="4O6-dF-kBI"/>
+                                    <constraint firstItem="54y-N7-pMZ" firstAttribute="height" secondItem="Puo-jq-7xa" secondAttribute="height" multiplier="0.75" id="4O6-dF-kBI"/>
                                     <constraint firstItem="54y-N7-pMZ" firstAttribute="top" secondItem="Puo-jq-7xa" secondAttribute="top" id="56t-Ec-yLP"/>
+                                    <constraint firstItem="Ulo-Ro-AaO" firstAttribute="width" secondItem="Puo-jq-7xa" secondAttribute="width" multiplier="0.9" id="5xq-II-rBB"/>
                                     <constraint firstItem="54y-N7-pMZ" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="93j-YK-dBK"/>
-                                    <constraint firstAttribute="trailing" secondItem="tKp-Fr-Mk9" secondAttribute="trailing" constant="20" id="Stz-58-3U5"/>
+                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="width" secondItem="Puo-jq-7xa" secondAttribute="width" multiplier="0.9" id="JpI-aK-Nwy"/>
+                                    <constraint firstItem="Ulo-Ro-AaO" firstAttribute="top" secondItem="tKp-Fr-Mk9" secondAttribute="bottom" constant="20" id="NWf-4R-oyL"/>
+                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="TmI-y4-UKU"/>
                                     <constraint firstItem="54y-N7-pMZ" firstAttribute="width" secondItem="Puo-jq-7xa" secondAttribute="width" id="VAu-nS-tS0"/>
-                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="Zf7-Er-GLM"/>
-                                    <constraint firstAttribute="bottom" secondItem="tKp-Fr-Mk9" secondAttribute="bottom" constant="20" id="cn9-sU-U9t"/>
-                                    <constraint firstItem="tKp-Fr-Mk9" firstAttribute="leading" secondItem="Puo-jq-7xa" secondAttribute="leading" constant="20" id="jVS-d8-AA7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ulo-Ro-AaO" secondAttribute="bottom" constant="20" id="frD-rX-JCm"/>
+                                    <constraint firstItem="Ulo-Ro-AaO" firstAttribute="centerX" secondItem="Puo-jq-7xa" secondAttribute="centerX" id="hJl-Uy-ZwH"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wpx-Z2-OVk">
-                                <rect key="frame" x="0.0" y="301.5" width="375" height="252.5"/>
+                                <rect key="frame" x="0.0" y="362" width="375" height="192"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WaterIntake" textLabel="97x-Jr-6Rq" detailTextLabel="ocO-b2-XKi" style="IBUITableViewCellStyleSubtitle" id="Ae1-fd-kR5">
@@ -110,22 +111,17 @@
                             <constraint firstItem="w8T-jv-Zhf" firstAttribute="top" secondItem="Wpx-Z2-OVk" secondAttribute="bottom" id="W2z-hA-wHQ"/>
                             <constraint firstItem="Puo-jq-7xa" firstAttribute="width" secondItem="w30-fK-Aaq" secondAttribute="width" id="XgG-zv-Fig"/>
                             <constraint firstItem="Wpx-Z2-OVk" firstAttribute="width" secondItem="w30-fK-Aaq" secondAttribute="width" id="XzO-Oa-OHT"/>
-                            <constraint firstItem="Puo-jq-7xa" firstAttribute="height" secondItem="w30-fK-Aaq" secondAttribute="height" multiplier="0.5" id="a9C-zJ-8jN"/>
+                            <constraint firstItem="Puo-jq-7xa" firstAttribute="height" secondItem="w30-fK-Aaq" secondAttribute="height" multiplier="0.6" id="a9C-zJ-8jN"/>
                             <constraint firstItem="Wpx-Z2-OVk" firstAttribute="top" secondItem="Puo-jq-7xa" secondAttribute="bottom" id="eog-ir-y5J"/>
                             <constraint firstItem="Wpx-Z2-OVk" firstAttribute="centerX" secondItem="w30-fK-Aaq" secondAttribute="centerX" id="gJP-Cw-reA"/>
                             <constraint firstItem="Puo-jq-7xa" firstAttribute="top" secondItem="9yV-JM-oCN" secondAttribute="bottom" id="iVt-S1-cnf"/>
                             <constraint firstItem="Puo-jq-7xa" firstAttribute="centerX" secondItem="w30-fK-Aaq" secondAttribute="centerX" id="prh-2c-Yfb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="JCw-bQ-Uwh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="KIy-yX-phb">
-                            <connections>
-                                <action selector="refreshGraph:" destination="tg8-jl-rTm" id="eP7-Uy-Mo4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="History" id="JCw-bQ-Uwh"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="graphStyleSegmentedControl" destination="Ulo-Ro-AaO" id="EsE-ew-Wr4"/>
                         <outlet property="graphTimeFrameSegmentedControl" destination="tKp-Fr-Mk9" id="14N-NK-c6a"/>
                         <outlet property="graphView" destination="54y-N7-pMZ" id="2wo-Sp-osy"/>
                     </connections>
@@ -146,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.36078431370000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.23405653239999999" green="0.48683160539999998" blue="0.1119307652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -180,6 +176,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabHistory" width="16" height="16"/>
+        <image name="tabHistory" width="25" height="25"/>
     </resources>
 </document>

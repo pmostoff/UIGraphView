@@ -22,26 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         //Set the initial values for UserDefaults
         defaults.register(defaults: [
-            // Set which type of unit to display in
-            "lengthUnit" : "miles",
-            // Daily Goal
-            "dailyGoalMiles" : 5,
-            "dailyGoalKilometers" : 8.0467,
-            // GoalsTable
             "timeFrame" : "Week",
-            "sortDescriptorKey" : "lengthInMiles",
-            "sortDescriptorAscending" : true,
-            // Notification related preferences
-            "dailyGoalCompletionNotifications" : false,
-            "weeklySummaryNotifications" : false,
-            "progressNotificationsInterval" : 0
+            "barGraph" : true
             ])
         
         
         // Sets background to a blank/empty image
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         // Sets the color of highlighted tab icon
-        UITabBar.appearance().tintColor = UIColor(red:0.00, green:0.36, blue:0.74, alpha:1.00)
+        UITabBar.appearance().tintColor = UIColor(red:0.39, green:0.39, blue:0.39, alpha:1.0)
         // This makes sure that modal views like the 'Print' share sheet don't have a transparent navBar
         UINavigationBar.appearance().isTranslucent = false
         // Removes the 1px high shadowImage from UINavigationBars
