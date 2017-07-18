@@ -4,7 +4,7 @@ UIGraphView is a view type designed for iOS using the Swift programming language
 
 | Line Graph Mode | Bar Graph Mode |
 |:---------------:|:--------------:|
-|<img src="UIGraphView_BarGraph.png" alt="UIGraphView Bar Graph" width=375>|<img src="UIGraphView_LineGraph.png" alt="UIGraphView Line Graph" width=375>|
+|<img src="UIGraphView_BarGraph.png" alt="UIGraphView Bar Graph" width=300>|<img src="UIGraphView_LineGraph.png" alt="UIGraphView Line Graph" width=300>|
 
 Designed to display a timeline of information:
 - Past day by hour
