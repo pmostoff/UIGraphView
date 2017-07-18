@@ -17,10 +17,6 @@
 		9F0259CF1ED911550092D194 /* UIGraphViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0259CE1ED911550092D194 /* UIGraphViewUITests.swift */; };
 		9F0259DD1ED911A60092D194 /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0259DC1ED911A60092D194 /* SharedExtensions.swift */; };
 		9F0259E31ED911D50092D194 /* UIGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0259E21ED911D50092D194 /* UIGraphView.swift */; };
-		9F0A708D1F1EAB040089F34C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9F0A708C1F1EAB040089F34C /* README.md */; };
-		9F0A708F1F1EAB0C0089F34C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A708E1F1EAB0C0089F34C /* LICENSE */; };
-		9F0A70911F1EACA90089F34C /* UIGraphView_BarGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A70901F1EACA80089F34C /* UIGraphView_BarGraph.png */; };
-		9F0A70931F1EACB10089F34C /* UIGraphView_LineGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A70921F1EACB10089F34C /* UIGraphView_LineGraph.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +53,6 @@
 		9F0259D01ED911550092D194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F0259DC1ED911A60092D194 /* SharedExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExtensions.swift; sourceTree = "<group>"; };
 		9F0259E21ED911D50092D194 /* UIGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGraphView.swift; sourceTree = "<group>"; };
-		9F0A708C1F1EAB040089F34C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../../../../../../Downloads/untitled folder/README.md"; sourceTree = "<group>"; };
-		9F0A708E1F1EAB0C0089F34C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "../../../../../../Downloads/untitled folder/LICENSE"; sourceTree = "<group>"; };
-		9F0A70901F1EACA80089F34C /* UIGraphView_BarGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIGraphView_BarGraph.png; path = ../../../../../../Downloads/UIGraphView_BarGraph.png; sourceTree = "<group>"; };
-		9F0A70921F1EACB10089F34C /* UIGraphView_LineGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIGraphView_LineGraph.png; path = ../../../../../../Downloads/UIGraphView_LineGraph.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +113,6 @@
 				9F0259B51ED911550092D194 /* Assets.xcassets */,
 				9F0259BA1ED911550092D194 /* Info.plist */,
 				9F0259B21ED911550092D194 /* UIGraphView.xcdatamodeld */,
-				9F0A708C1F1EAB040089F34C /* README.md */,
-				9F0A708E1F1EAB0C0089F34C /* LICENSE */,
-				9F0A70901F1EACA80089F34C /* UIGraphView_BarGraph.png */,
-				9F0A70921F1EACB10089F34C /* UIGraphView_LineGraph.png */,
 			);
 			path = UIGraphView;
 			sourceTree = "<group>";
@@ -271,11 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F0A70931F1EACB10089F34C /* UIGraphView_LineGraph.png in Resources */,
-				9F0A70911F1EACA90089F34C /* UIGraphView_BarGraph.png in Resources */,
 				9F0259B91ED911550092D194 /* LaunchScreen.storyboard in Resources */,
 				9F0259B61ED911550092D194 /* Assets.xcassets in Resources */,
-				9F0A708F1F1EAB0C0089F34C /* LICENSE in Resources */,
 				9F0259B11ED911550092D194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F0A708D1F1EAB040089F34C /* README.md in Sources */,
 				9F0259DD1ED911A60092D194 /* SharedExtensions.swift in Sources */,
 				9F0259AE1ED911550092D194 /* ViewController.swift in Sources */,
 				9F0259AC1ED911550092D194 /* AppDelegate.swift in Sources */,
