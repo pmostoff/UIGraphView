@@ -14,18 +14,18 @@ Designed to display a timeline of information:
 
 Can be modified to display different types of information sets.
 
-## Features
+### Features
 - Easy installation with a single function to set up
 - Customizable design through interface builder
 - Automatically creates x-axis labels based on timeFrame passed and current date
 
-### Installation
+## Installation
 Simply add `UIGraphView.swift` and `SharedExtensions.swift` to your Xcode project.
 
 Note:
 `SharedExtensions.swift` contains an extension I wrote in order to easily return a clean string from a Double. This is used in several places in `UIGraphView.swift` so it is essential. Alternatively, you can copy the `cleanValue` extension and paste it at the end of `UIGraphView.swift`.
 
-### Usage
+## Usage
 
 Add `UIGraphView.swift` to your Xcode project.
 
@@ -49,7 +49,9 @@ graphView.configure(graphData: [Double],
 ```
 
 `graphData` expects an array of Doubles and should automatically adjust placement of data points based on the amount of entries in the array.
+
 `graphTimeFrame` expects a string of `Day`, `Week`, `Month`, or `Year`. If one of these strings is passed to `graphTimeFrame`, x-axis labels will be automatically created for you based on that time frame and the current date.
+
 `graphTitle`, `graphSubtitle`, `latestEntry`, and `latestEntryTime` all expect String values.
 
 While the graph should accept any length of `graphData` array, for the data points to properly line up with the x-axis labels you should use an array with a length appropriate for the `graphTimeFrame` you use:
@@ -66,6 +68,14 @@ UIGraphView was built and tested using:
 - iOS 10.3
 - Xcode 8
 - Swift 3 and 4
+
+## Author
+
+Programmed and designed by Peter Mostoff. [You can contact me via Twitter](https://twitter.com/pmostoff) if you'd like! I'm definitely open to suggestions on how to improve this code. I made it work for what I needed and thought I'd share, but I'm sure there are ways to improve it that I haven't even thought of. Please let me know if you have any suggestions!
+
+If you do use this code in an application you're working, I'd really appreciate you letting me know. I'd really enjoy getting to know this was useful for someone else and maybe I'll even drop in a link to your app here!
+
+If you're interested, you can visit my personal site to see what I'm up to at [Mostoff.me](http://mostoff.me) or if you want to support my work, check out the apps that I've published on the [App Store](https://itunes.apple.com/tc/developer/peter-mostoff/id1080412491)!
 
 ## License
 `UIGraphView` is available under the MIT license. See the LICENSE file for more info.
