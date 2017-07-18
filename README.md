@@ -77,5 +77,10 @@ If you do use this code in an application you're working, I'd really appreciate 
 
 If you're interested, you can visit my personal site to see what I'm up to at [Mostoff.me](http://mostoff.me) or if you want to support my work, check out the apps that I've published on the [App Store](https://itunes.apple.com/tc/developer/peter-mostoff/id1080412491)!
 
+### Apps Using UIGraphView
+[Gone So Far: Distance Tracker](https://itunes.apple.com/tc/app/gone-so-far-distance-tracker/id1080412492?mt=8)
+[Hydration: Water Tracker](https://itunes.apple.com/tc/app/hydration-water-tracker/id1236086101?mt=8)
+[HeartRate: BPM Tracker](https://itunes.apple.com/tc/app/heartrate-bpm-tracker/id1236088071?mt=8)
+
 ## License
 `UIGraphView` is available under the MIT license. See the LICENSE file for more info.
