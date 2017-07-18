@@ -2,6 +2,9 @@
 
 UIGraphView is a view type designed for iOS using the Swift programming language.
 
+<img src="UIGraphView_BarGraph.png" alt="UIGraphView Bar Graph" width=375>
+<img src="UIGraphView_LineGraph.png" alt="UIGraphView Line Graph" width=375>
+
 Designed to display a timeline of information:
 - Past day by hour
 - Past week by day
@@ -16,7 +19,10 @@ Can be modified to display different types of information sets.
 - Automatically creates x-axis labels based on timeFrame passed and current date
 
 ### Installation
-Simply add `UIGraphView.swift` to your Xcode project.
+Simply add `UIGraphView.swift` and `SharedExtensions.swift` to your Xcode project.
+
+Note:
+`SharedExtensions.swift` contains an extension I wrote in order to easily return a clean string from a Double. This is used in several places in `UIGraphView.swift` so it is essential. Alternatively, you can copy the `cleanValue` extension and paste it at the end of `UIGraphView.swift`.
 
 ### Usage
 
