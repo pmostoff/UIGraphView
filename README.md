@@ -79,7 +79,9 @@ If you're interested, you can visit my personal site to see what I'm up to at [M
 
 ### Apps Using UIGraphView
 [Gone So Far: Distance Tracker](https://itunes.apple.com/tc/app/gone-so-far-distance-tracker/id1080412492?mt=8)
+
 [Hydration: Water Tracker](https://itunes.apple.com/tc/app/hydration-water-tracker/id1236086101?mt=8)
+
 [HeartRate: BPM Tracker](https://itunes.apple.com/tc/app/heartrate-bpm-tracker/id1236088071?mt=8)
 
 ## License
