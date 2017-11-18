@@ -65,9 +65,9 @@ While the graph should accept any length of `graphData` array, for the data poin
 
 ## Requirements
 UIGraphView was built and tested using:
-- iOS 10.3
-- Xcode 8
-- Swift 3 and 4
+- iOS 11
+- Xcode 9
+- Swift 4
 
 ## Author
 
