@@ -437,7 +437,7 @@ class UIGraphView: UIView {
         
         // Fill dayTimes Array
         // Fill Properly If 12-Hour Time; If 24-Hour Time
-        switch time.substring(from: time.index(time.endIndex, offsetBy: -2)) {
+        switch String(time[time.index(time.endIndex, offsetBy: -2)...]) {
         case "AM":
             dayTimes = ["12 AM", "12 PM", "11 PM"]
         case "PM":
